@@ -202,3 +202,26 @@ thead th{background:transparent;color:var(--muted);font-weight:600}
 .modal{transform:translateY(-10px) scale(0.98);opacity:0;transition:all 260ms cubic-bezier(.2,.8,.2,1)}
 .modal-backdrop.show .modal{transform:none;opacity:1}
 
+@media (max-width:1200px){
+  .app{max-width:920px;padding:18px}
+  .card{min-width:160px}
+}
+@media (max-width:900px){
+  .app{max-width:760px;padding:16px}
+  header{padding:10px}
+  .card{padding:12px}
+  .table-wrap table{min-width:600px}
+}
+@media (max-width:720px){
+  .app{max-width:100%;margin:12px}
+  .card{padding:10px}
+  .table-wrap table{min-width:520px}
+  .modal{width:min(96%,420px)}
+}
+@media (max-width:520px){
+  .app{padding:10px}
+  header{padding:8px}
+  .card{padding:8px}
+  .table-wrap table{min-width:420px}
+}
+
