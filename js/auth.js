@@ -156,15 +156,29 @@
   function showRegister(next){ sessionStorage.setItem('auth_next', next || window.location.href); createAuthModal('register'); }
   function showProfile(){ createAuthModal('profile'); }
 
-  // Intercept clicks on admin links
+  // Intercept clicks on admin links (robust)
   document.addEventListener('click', function(e){
-    const a = e.target.closest && e.target.closest('a');
-    if(!a) return;
-    const href = a.getAttribute('href') || '';
-    if(href.indexOf('admin.html') !== -1){
+    try{
+      // find nearest anchor (support environments without closest)
+      let node = e.target;
+      while(node && node.nodeType === 1 && node.tagName !== 'A') node = node.parentElement;
+      const a = (node && node.tagName === 'A') ? node : null;
+      if(!a) return;
+
+      const href = a.getAttribute('href') || '';
+      // allow explicit protection via data-protect="auth" or by matching admin.html
+      const protectedLink = a.dataset && a.dataset.protect === 'auth';
+      if(!protectedLink && href.indexOf('admin.html') === -1) return;
+
       if(!isAuthenticated()){
-        e.preventDefault(); showLogin(a.href);
+        e.preventDefault();
+        // store the desired destination and open login modal
+        const next = a.href || href || window.location.href;
+        console.debug('[auth] protected link clicked, redirecting to login, next=', next);
+        showLogin(next);
       }
+    }catch(err){
+      console.error('auth click handler error', err);
     }
   });
 
