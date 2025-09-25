@@ -105,7 +105,8 @@
   }
   @media (max-width:520px){
     .app{padding:12px}
-    .sidebar{display:none}
+    /* keep sidebar visible on very small screens and make it full-width */
+    .sidebar{display:block;order:2;width:100%;margin-bottom:12px}
     .main{padding:6px}
     .search{width:100%}
     .card h3{font-size:12px}
@@ -114,4 +115,7 @@
     .grid{grid-template-columns:1fr}
     table{font-size:12px}
     th,td{padding:6px}
+    /* make nav horizontal and scrollable for small screens */
+    .nav{flex-direction:row;overflow:auto;gap:6px;padding-bottom:6px}
+    .nav button{white-space:nowrap;padding:8px;border-radius:8px}
   }
