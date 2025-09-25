@@ -288,4 +288,16 @@ window.editMember = async function(id){
 };
 
 // init
+// mobile sidebar toggle (header hamburger)
+document.addEventListener('DOMContentLoaded', function(){
+  try{
+    const navBtn = document.getElementById('navToggleAdmin');
+    const sidebar = document.querySelector('.sidebar');
+    if(navBtn && sidebar){
+      navBtn.addEventListener('click', function(e){ sidebar.classList.toggle('show'); e.stopPropagation(); });
+      document.addEventListener('click', function(e){ if(sidebar.classList.contains('show') && !sidebar.contains(e.target) && e.target !== navBtn) sidebar.classList.remove('show'); });
+    }
+  }catch(err){ console.error('nav toggle init', err); }
+});
+
 (async ()=>{ try{ initTabsAdmin(); bindAdminActions(); await refreshAdmin(); }catch(e){ console.error('admin init error', e); } })(); 
