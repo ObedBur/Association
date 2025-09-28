@@ -7,46 +7,46 @@
     <title>Rapports — Association</title>
   </head>
   <body>
-    <header class="no-mobile-menu" style="margin:18px auto;max-width:980px;padding:12px 20px;display:flex;justify-content:space-between;align-items:center">
+    <header class="no-mobile-menu rapport-header">
       <nav class="my-header" aria-label="Navigation page">
         <div class="block1">
-          <h2 style="margin:0">Rapports</h2>
+          <h2>Rapports</h2>
         </div>
         
-        <nav><a href="../Html/admin.html" style="color:var(--primary);font-weight:600;text-decoration:none">Admin</a></nav>  
+        <nav><a href="../Html/admin.html" class="liste-back">Admin</a></nav>  
       </nav>
     </header>
 
     <main class="app">
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-bottom:12px">
+      <div class="rapport-grid">
         <div class="card">
-          <div style="color:var(--muted)">Membres</div>
-          <div id="reportMembers" style="font-size:22px;font-weight:700">0</div>
+          <div class="rapport-meta">Membres</div>
+          <div id="reportMembers" class="rapport-value">0</div>
         </div>
         <div class="card">
-          <div style="color:var(--muted)">Total dépôts</div>
-          <div id="reportDepots" style="font-size:22px;font-weight:700">0 FC</div>
+          <div class="rapport-meta">Total dépôts</div>
+          <div id="reportDepots" class="rapport-value">0 FC</div>
         </div>
         <div class="card">
-          <div style="color:var(--muted)">Total retraits</div>
-          <div id="reportRetraits" style="font-size:22px;font-weight:700">0 FC</div>
+          <div class="rapport-meta">Total retraits</div>
+          <div id="reportRetraits" class="rapport-value">0 FC</div>
         </div>
         <div class="card">
-          <div style="color:var(--muted)">Solde total</div>
-          <div id="reportSoldes" style="font-size:22px;font-weight:700">0 FC</div>
+          <div class="rapport-meta">Solde total</div>
+          <div id="reportSoldes" class="rapport-value">0 FC</div>
         </div>
         <div class="card">
-          <div style="color:var(--muted)">Bénéfices</div>
-          <div id="reportBenefices" style="font-size:22px;font-weight:700">0 FC</div>
+          <div class="rapport-meta">Bénéfices</div>
+          <div id="reportBenefices" class="rapport-value">0 FC</div>
         </div>
         <div class="card">
-          <div style="color:var(--muted)">Solde d'un membre</div>
-          <label for="memberReportSelect" style="margin-top:8px;display:block;color:var(--muted)">Choisir un membre</label>
-          <select id="memberReportSelect" style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6e9ef;margin-top:8px">
+          <div class="rapport-meta">Solde d'un membre</div>
+          <label for="memberReportSelect" class="rapport-label">Choisir un membre</label>
+          <select id="memberReportSelect" class="rapport-select">
             <option value="">-- Choisir --</option>
           </select>
-          <div style="margin-top:10px;color:var(--muted)">Solde</div>
-          <div id="memberBalance" style="font-size:20px;font-weight:700">—</div>
+          <div class="rapport-meta">Solde</div>
+          <div id="memberBalance" class="rapport-value">—</div>
         </div>
       </div>
 

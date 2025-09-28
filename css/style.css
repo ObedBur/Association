@@ -109,6 +109,62 @@ thead th{background:transparent;color:var(--muted);font-weight:600}
 /* support inline-styled modal layout from user */
 .modal[style]{max-width:450px}
 
+/* Styles moved from inline in Html/epargne.html */
+.epargne-header{margin:18px auto;max-width:980px;padding:12px 20px;display:flex;justify-content:space-between;align-items:center}
+.epargne-header .my-header h2{margin:0}
+.back-link{color:var(--primary);font-weight:600;text-decoration:none}
+.member-search-input{width:100%;padding:10px;border-radius:8px;border:1px solid #e6e9ef}
+.member-list-box{max-height:220px;overflow:auto;border:1px solid #eef2ff;border-radius:8px;margin-top:6px;background:#fff}
+#memberCard{margin-top:12px;padding:10px;border-radius:8px;background:linear-gradient(180deg,#fff,#fbfdff);border:1px solid rgba(15,23,42,0.03)}
+#memberName{font-weight:700;color:var(--text)}
+#memberMeta{color:var(--muted);margin-top:6px;font-size:13px}
+#montantSel{width:100%;padding:10px;border-radius:8px;border:1px solid #e6e9ef}
+.date-label{margin-top:10px}
+#depotDate{width:100%;padding:10px;border-radius:8px;border:1px solid #e6e9ef}
+.depot-actions{text-align:right;margin-top:12px}
+.sep{margin:16px 0;border:none;border-top:1px solid rgba(15,23,42,0.04)}
+/* epargne layout helpers */
+.epargne-row { display:flex; gap:18px; flex-wrap:wrap; align-items:flex-start; }
+.epargne-col { flex:1; min-width:260px; }
+.epargne-toolbar { display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; }
+.epargne-count { color:var(--muted); }
+
+/* liste page helpers */
+.liste-header{margin:18px auto;max-width:980px;padding:12px 20px;display:flex;justify-content:space-between;align-items:center}
+.liste-header .my-header h2{margin:0}
+.liste-back{color:var(--primary);font-weight:600;text-decoration:none}
+.liste-toolbar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.liste-search-wrap{display:flex;align-items:center;gap:10px}
+.liste-search-input{padding:8px;border-radius:8px;border:1px solid #e6e9ef;width:360px;min-width:160px}
+.liste-count{color:var(--muted)}
+
+/* notification page helpers */
+.notif-container{max-width:700px;margin:40px auto;padding:24px;background:#fff;border-radius:12px;box-shadow:0 2px 16px rgba(0,0,0,0.07)}
+.notif-title{margin-bottom:18px;font-size:2rem;font-weight:700;color:#2b8aef;letter-spacing:-1px}
+.notif-card{border:1px solid #e0e0e0;padding:14px 16px;margin-bottom:12px;border-radius:8px;background:#f9fbff}
+.notif-card h3{font-weight:600;font-size:1.1em;margin-bottom:4px}
+.notif-card .meta{font-size:13px;color:#888}
+.no-notif{display:none;text-align:center;color:#aaa;margin-top:32px}
+.no-notif .icon{font-size:2.5em;opacity:0.2}
+
+/* rapport page helpers */
+.rapport-header{margin:18px auto;max-width:980px;padding:12px 20px;display:flex;justify-content:space-between;align-items:center}
+.rapport-header .my-header h2{margin:0}
+.rapport-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-bottom:12px}
+.rapport-meta{color:var(--muted)}
+.rapport-value{font-size:22px;font-weight:700}
+.rapport-label{margin-top:8px;display:block;color:var(--muted)}
+.rapport-select{width:100%;padding:10px;border-radius:8px;border:1px solid #e6e9ef;margin-top:8px}
+.rapport-chart{height:320px;width:100%;display:block}
+.rapport-heading{margin-top:0}
+
+/* admin page helpers */
+.admin-hr{margin:14px 0;border:none;border-top:1px solid rgba(255,255,255,0.02)}
+.top-actions{display:flex;gap:8px}
+.members-header{margin:10px 0 16px 0;display:flex;justify-content:space-between;align-items:center}
+.history-panel{margin-top:18px}
+.history-scroll{max-height:220px;overflow:auto;margin-top:8px}
+
 /* Flexible form grid utilities (use classes on a wrapper to set column ratios) */
 .form-grid{display:flex;gap:12px;flex-wrap:wrap;align-items:flex-start}
 .form-grid .form-field{min-width:120px}
