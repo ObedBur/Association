@@ -1,0 +1,93 @@
+
+:root{
+  --bg:#f8fafc; --card:#ffffff; --muted:#6b7280; --accent:#0ea5e9; --accent-2:#7c3aed; --success:#10b981; --danger:#ef4444;
+  --glass: rgba(15,23,42,0.04);
+  --radius:12px;
+  --text:#0f172a;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+.pay-app{max-width:980px;margin:20px auto;padding:18px}
+.grid{display:grid;grid-template-columns:1fr 320px;gap:18px}
+.pay-app .card{background:#fff;border-radius:12px;padding:14px;box-shadow:0 6px 18px rgba(2,6,23,0.06)}
+.list-row{display:flex;align-items:center;justify-content:space-between;padding:10px;border-bottom:1px solid #f1f5f9}
+.list-row:last-child{border-bottom:0}
+.pay-app .actions{display:flex;gap:8px}
+.pay-app .btn {padding:8px 12px;border-radius:8px;border:1px solid #e6e9ef;background:#f8fafc;cursor:pointer}
+.pay-app .btn-primary{background:#2563eb;color:#fff;border:0}
+.muted{color:#6b7280}
+.pending-date{font-size:12px;color:#374151;margin-top:6px}
+.pending-info{display:flex;flex-direction:column;align-items:flex-end}
+
+/* Utilities used by paiement page */
+.flex-between-center{display:flex;justify-content:space-between;align-items:center}
+.mt-12{margin-top:12px}
+.mt-8{margin-top:8px}
+.mb-12{margin-bottom:12px}
+.text-right{text-align:right}
+.hidden{display:none}
+
+/* Modal styles for list modal */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:12000;align-items:center;justify-content:center}
+.modal-inner{background:#fff;border-radius:10px;max-width:900px;width:95%;max-height:80vh;overflow:auto;padding:16px;position:relative}
+.modal-close-btn{position:absolute;right:12px;top:12px;background:#fff;border:0;font-size:18px;cursor:pointer}
+
+/* Back button */
+.back-wrap{margin-bottom:18px}
+.btn-ghost{background:transparent;border:1px solid rgba(15,23,42,0.06);color:var(--muted)}
+a.btn-ghost{
+  display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:10px;border:1px solid rgba(15,23,42,0.06);background:transparent;color:var(--text);text-decoration:none;font-weight:600;transition:all 180ms ease;box-shadow:0 2px 8px rgba(15,23,42,0.04);
+}
+a.btn-ghost:hover{
+  background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#fff;border-color:rgba(14,165,233,0.12);transform:translateY(-1px);
+}
+
+/* member search dropdown (shared) */
+.member-search{position:relative}
+.dropdown{position:relative;z-index:1200}
+.member-item{padding:8px;border-bottom:1px solid #f1f5f9;cursor:pointer}
+.member-item:hover{background:#f1f5ff}
+
+/* Responsive tweaks */
+@media (max-width: 900px){
+  .grid{grid-template-columns:1fr 300px}
+  .pay-app{padding:14px}
+  .modal-inner{max-width:720px}
+  
+}
+
+@media (max-width: 720px){
+  .grid{grid-template-columns:1fr}
+  .pay-app{padding:12px}
+  .pay-app .card{padding:12px}
+  .modal-inner{width:92%;max-width:560px}
+  .text-right{text-align:left}
+  .pay-app .btn{padding:8px 10px}
+  .header{
+    display: flex;
+    justify-content: space-between;
+    background: var(--accent);
+    padding: 10px 10px;
+    background: fixed;
+    z-index: 1000;
+  }
+  .header .btn-ghost{
+    margin-top: 30px ;
+    min-width: 120px ;
+
+  }
+
+}
+
+@media (max-width: 420px){
+  .pay-app{padding:10px;margin:12px}
+  .modal-inner{width:96%;padding:12px}
+  .mt-12{margin-top:10px}
+  .mt-8{margin-top:6px}
+  .flex-between-center{flex-direction:column;align-items:flex-start;gap:10px}
+  .pay-app .btn{width:100%}
+  .text-right{text-align:left}
+  
+}
+
+
+

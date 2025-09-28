@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Notifications - Association</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header class="no-mobile-menu" style="margin:18px auto;max-width:980px;padding:12px 20px;display:flex;justify-content:space-between;align-items:center">
+    <nav class="my-header" aria-label="Navigation page">
+      <div class="block1">
+        <h2 style="margin:0">Notifcations </h2>
+      </div>
+      
+      <nav><a href="../Html/admin.html" style="color:var(--primary);font-weight:600;text-decoration:none">Admin</a></nav>  
+    </nav>
+  </header>
+  <div class="container" style="max-width:700px;margin:40px auto;padding:24px;background:#fff;border-radius:12px;box-shadow:0 2px 16px rgba(0,0,0,0.07)">
+    <h1 style="margin-bottom:18px;font-size:2rem;font-weight:700;color:#2b8aef;letter-spacing:-1px">Notifications</h1>
+    
+    <div id="notifications-list" aria-live="polite">
+      <!-- Les notifications seront affichées ici dynamiquement -->
+      <div class="notification" style="border:1px solid #e0e0e0;padding:14px 16px;margin-bottom:12px;border-radius:8px;background:#f9fbff">
+        <div style="font-weight:600;font-size:1.1em;margin-bottom:4px">Bienvenue sur la page des notifications !</div>
+        <div class="meta" style="font-size:13px;color:#888">Aucune notification récente.</div>
+      </div>
+    </div>
+    <div id="no-notif" style="display:none;text-align:center;color:#aaa;margin-top:32px">
+      <span style="font-size:2.5em;opacity:0.2">🔔</span>
+      <div>Aucune notification à afficher.</div>
+    </div>
+  </div>
+  <script src="../js/notification.js"></script>
+</body>
+</html>

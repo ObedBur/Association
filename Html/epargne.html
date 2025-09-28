@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Dépôt — Association</title>
+  </head>
+  <body>
+    <header class="no-mobile-menu" style="margin:18px auto;max-width:980px;padding:12px 20px;display:flex;justify-content:space-between;align-items:center">
+      <nav class="my-header" aria-label="Navigation page">
+        <div class="block1">
+          <h2 style="margin:0">Dépôt / Épargne</h2>
+        </div>
+        <div class="block2">
+          <a href="../index.html" style="color:var(--primary);font-weight:600;text-decoration:none">Retour</a>
+        </div>
+        </nav>
+    </header>
+    <script src="../js/menu.js"></script>
+
+    <main class="app">
+      <div class="card">
+        <div style="display:flex;gap:18px;flex-wrap:wrap;align-items:flex-start">
+          <div style="flex:1;min-width:260px">
+            <label for="memberSearch">Sélectionner un membre</label>
+            <div class="member-search">
+              <input id="memberSearch" aria-label="Rechercher un membre" autocomplete="off" placeholder="Tapez pour rechercher..." style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6e9ef" />
+              <div id="memberList" class="dropdown hidden" role="listbox" aria-expanded="false" style="max-height:220px;overflow:auto;border:1px solid #eef2ff;border-radius:8px;margin-top:6px;background:#fff"></div>
+            </div>
+            <input type="hidden" id="memberSelectedCode" />
+
+            <div id="memberCard" style="margin-top:12px;padding:10px;border-radius:8px;background:linear-gradient(180deg,#fff,#fbfdff);border:1px solid rgba(15,23,42,0.03)">
+              <div id="memberName" style="font-weight:700;color:var(--text)">Aucun membre sélectionné</div>
+              <div id="memberMeta" style="color:var(--muted);margin-top:6px;font-size:13px">Détails affichés ici</div>
+            </div>
+          </div>
+
+          <div style="flex:1;min-width:260px">
+            <label for="montantSel">Montant</label>
+            <select id="montantSel" style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6e9ef">
+              <option value="2000">2000 FC</option>
+              <option value="3000">3000 FC</option>
+              <option value="4000">4000 FC</option>
+              <option value="5000">5000 FC</option>
+              <option value="10000">10000 FC</option>
+            </select>
+
+            <label style="margin-top:10px">Date</label>
+            <input type="date" id="depotDate" style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6e9ef" />
+
+            <div style="margin-top:12px;text-align:right">
+              <button id="btnDepot" class="btn-primary">Enregistrer dépôt</button>
+            </div>
+          </div>
+        </div>
+
+        <hr style="margin:16px 0;border:none;border-top:1px solid rgba(15,23,42,0.04)" />
+
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+          <div style="color:var(--muted)"><strong id="depotCount">0</strong> dépôts</div>
+          <div>
+            <button id="exportDepot" class="btn-ghost">Exporter CSV</button>
+            <button id="clearDepot" class="btn-danger">Supprimer tous</button>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <div id="depotsContainer"></div>
+        </div>
+      </div>
+    </main>
+
+    <script src="../js/membre.js"></script>
+    <script src="../js/api.js"></script>
+    <script src="../js/epargne.js"></script>
+  </body>
+</html>
+
+

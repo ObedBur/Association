@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Liste des membres — Association</title>
+  </head>
+  <body>
+    <header class="no-mobile-menu" style="margin:18px auto;max-width:980px;padding:12px 20px;display:flex;justify-content:space-between;align-items:center">
+      <nav class="my-header" aria-label="Navigation page">
+      <h2 style="margin:0">Liste des membres</h2>
+      <div class="back">
+        <a href="../index.html" style="color:var(--primary);font-weight:600;text-decoration:none">Retour</a>
+      </div>
+        </nav>
+    </header>
+    <script src="../js/menu.js"></script>
+
+    <main class="app">
+      <div class="card">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:12px">
+          <div style="display:flex;align-items:center;gap:10px">
+            <input id="search" type="search" placeholder="Rechercher par nom, code ou téléphone" style="padding:8px;border-radius:8px;border:1px solid #e6e9ef;width:360px;min-width:160px">
+            <button id="exportCsv" class="btn-ghost">Exporter CSV</button>
+          </div>
+          <div style="color:var(--muted)"><strong id="pageCount">0</strong> membres</div>
+        </div>
+
+        <div class="table-wrap">
+          <div id="membersContainer" aria-live="polite"></div>
+        </div>
+      </div>
+    </main>
+
+    <script src="../js/membre.js"></script>
+    <script src="../js/app.bundle.js" defer></script>
+  </body>
+</html>
+
+

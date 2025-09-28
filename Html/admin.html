@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Admin - Association (Membres, Épargne, Retrait)</title>
+  <link rel="stylesheet" href="../css/admin.css">
+  <meta name="description" content="Tableau de bord simple pour gérer membres, épargnes et retraits (HTML/CSS/JS)." />
+  <style>
+    </style>
+</head>
+<body>
+  <header class="admin-header">
+  
+    <div class="brand-right">
+      <a href="../index.html" class="btn btn-ghost"> Retour à l'accueil</a>
+    </div>
+    <button id="navToggleAdmin" class="btn btn-ghost" aria-label="Ouvrir le menu">☰</button>
+  </header>
+
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="logo">AJ</div>
+        <div>
+          <h1>Association Jackson</h1>
+          <div class="muted">Admin - Association</div>
+        </div>
+      </div>
+      <nav class="nav">
+        <button class="active" data-tab="members">Membres</button>
+        <button data-tab="epargne">Épargnes</button>
+        <button data-tab="retraits">Retraits</button>
+        <button data-tab="rapports">Rapports</button>
+      </nav>
+      <hr style="margin:14px 0;border:none;border-top:1px solid rgba(255,255,255,0.02)">
+      <div class="auth-row muted">Connexion: <strong id="authUser">—</strong></div>
+    </aside>
+
+    <main class="main">
+      <div class="top">
+        <div class="search">
+          🔍 <input id="q" placeholder="Rechercher un membre, id ou téléphone...">
+        </div>
+        <div style="display:flex;gap:8px">
+          <button class="btn btn-ghost" id="exportBtn">Exporter CSV</button>
+          <button class="btn btn-primary" id="newMemberBtn">+ Nouveau membre</button>
+          <button class="btn btn-ghost" id="clearAllData">Vider données</button>
+          <button class="btn btn-ghost" id="importLocalBtn">Importer local → serveur</button>
+        </div>
+      </div>
+
+      <div class="cards">
+        <div class="card">
+          <h3>Total membres</h3>
+          <p id="totalMembers">0</p>
+        </div>
+        <div class="card">
+          <h3>Total épargnes</h3>
+          <p id="totalSavings">0 FC</p>
+        </div>
+        
+        <div class="card">
+          <h3>Total paiements</h3>
+          <p id="totalPayments">0 FC</p>
+        </div>
+      </div>
+
+      <div class="grid">
+        <section class="panel" id="membersPanel">
+          <h2>Membres</h2>
+          <div style="margin:10px 0 16px 0;display:flex;justify-content:space-between;align-items:center">
+            <div class="muted">Liste des membres inscrits</div>
+            <div class="muted">Solde moyen: <span id="avgBalance">0 FC</span></div>
+          </div>
+
+          <div class="list-small">
+            <table>
+              <thead><tr><th>Membre</th><th>Téléphone</th><th>Solde</th><th>Actions</th></tr></thead>
+              <tbody id="membersTable"></tbody>
+            </table>
+          </div>
+
+          <footer>Double-clique sur un membre pour éditer.</footer>
+        </section>
+
+    
+      </div>
+
+      <section class="panel" id="historyPanel" style="margin-top:18px">
+        <h3>Historique des opérations</h3>
+        <div style="max-height:220px;overflow:auto;margin-top:8px">
+          <table>
+            <thead><tr><th>Date</th><th>Membre</th><th>Type</th><th>Montant</th><th>Solde après</th></tr></thead>
+            <tbody id="historyTable"></tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+  </div>
+  <script src="../js/auth.js"></script>
+  <script src="../js/ui.js"></script>
+  <script src="../js/membre.js"></script>
+  <script src="../js/admin.js"></script>
+  
+  
+</body>
+</html>

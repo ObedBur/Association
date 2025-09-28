@@ -1,0 +1,120 @@
+:root{
+    --bg:#f8fafc; --card:#ffffff; --muted:#6b7280; --accent:#0ea5e9; --accent-2:#7c3aed; --success:#10b981; --danger:#ef4444;
+    --glass: rgba(15,23,42,0.04);
+    --radius:12px;
+    --text:#0f172a;
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%;margin:0;background:linear-gradient(180deg,#f8fafc 0%, #eef2f7 60%);color:var(--text)}
+  .app{display:grid;grid-template-columns:260px 1fr;gap:24px;min-height:100vh;padding:28px}
+
+  /* SIDEBAR */
+  .sidebar{background:var(--card);border-radius:var(--radius);padding:20px;box-shadow:0 6px 18px rgba(15,23,42,0.06)}
+  .brand{display:flex;gap:12px;align-items:center;margin-bottom:18px}
+  .logo{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff}
+  .brand h1{font-size:16px;margin:0;color:var(--text)}
+  .nav{display:flex;flex-direction:column;gap:8px;margin-top:12px}
+  .nav button{background:none;border:0;color:var(--muted);text-align:left;padding:10px;border-radius:10px;cursor:pointer}
+  .nav button.active{color:var(--text);background:linear-gradient(90deg, rgba(14,165,233,0.08), rgba(124,58,237,0.06));box-shadow:inset 0 -1px 0 rgba(0,0,0,0.03)}
+
+  /* MAIN */
+  .main{padding:8px}
+  .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+  .search{background:var(--glass);padding:10px 12px;border-radius:12px;display:flex;gap:10px;align-items:center;width:480px}
+  .search input{background:transparent;border:0;outline:none;color:var(--text);width:100%}
+  .cards{display:flex;gap:14px;margin-bottom:18px}
+  .card{background:var(--card);padding:16px;border-radius:12px;min-width:200px;flex:1;box-shadow:0 6px 18px rgba(15,23,42,0.04)}
+  .card h3{margin:0 0 8px 0;font-size:13px;color:var(--muted)}
+  .card p{font-size:20px;margin:0;color:var(--text)}
+
+  /* Layout for tables/forms */
+  .grid{display:grid;grid-template-columns:1fr 420px;gap:18px}
+  .panel{background:var(--card);border-radius:12px;padding:14px;box-shadow:0 6px 18px rgba(15,23,42,0.03)}
+  table{width:100%;border-collapse:collapse;color:var(--text)}
+  th,td{padding:10px 8px;text-align:left;font-size:14px}
+  th{font-size:12px;color:#475569}
+  tr{border-top:1px solid rgba(15,23,42,0.04)}
+  .avatar{width:36px;height:36px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:inline-flex;align-items:center;justify-content:center;color:#fff;font-weight:700}
+
+  /* Forms */
+  label{display:block;font-size:13px;color:var(--muted);margin-bottom:6px}
+  input[type=text], input[type=number], select{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(15,23,42,0.06);background:var(--card);color:var(--text);outline:1px solid rgba(15,23,42,0.02)}
+  .btn{display:inline-block;padding:10px 14px;border-radius:10px;border:0;cursor:pointer}
+  .btn-primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#fff}
+  .btn-ghost{background:transparent;border:1px solid rgba(15,23,42,0.06);color:var(--muted)}
+
+  .list-small{max-height:360px;overflow:auto}
+  .muted{color:var(--muted);font-size:13px}
+
+  footer{margin-top:18px;color:var(--muted);font-size:13px}
+
+  /* Header (admin) */
+  .admin-header{display:flex;justify-content:space-between;align-items:center;padding:12px 20px;background:transparent}
+  .admin-header {display:flex;align-items:center;gap:12px}
+  .admin-header  h1{margin:0;font-size:18px}
+  .admin-header .brand-right{display:flex;align-items:center;gap:8px}
+  #navToggleAdmin{display:none;padding:8px;border-radius:8px;border:1px solid rgba(15,23,42,0.06);background:transparent}
+  /* Style for 'Retour à l\'accueil' button in admin header */
+  .admin-header .brand-right a.btn-ghost{
+    display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:10px;border:1px solid rgba(15,23,42,0.06);background:transparent;color:var(--text);text-decoration:none;font-weight:600;transition:all 180ms ease;box-shadow:0 2px 8px rgba(15,23,42,0.04);
+  }
+  .admin-header .brand-right a.btn-ghost:hover{
+    }
+
+  /* Sidebar off-canvas for small screens */
+  .sidebar{position:relative}
+  .sidebar.show{transform:none}
+
+  /* Responsive */
+  @media (max-width:1200px){
+    .app{grid-template-columns:220px 1fr;padding:20px}
+    .search{width:360px}
+    .card{min-width:150px}
+  }
+  @media (max-width:900px){
+    #navToggleAdmin{display:inline-flex}
+    .sidebar{position:fixed;left:0;top:64px;bottom:0;width:260px;transform:translateX(-110%);transition:transform .24s ease,box-shadow .24s ease;z-index:1200;box-shadow:0 30px 80px rgba(2,6,23,0.12)}
+    .sidebar.show{transform:translateX(0)}
+    .admin-header .brand-right{display:flex;align-items:center}
+    .app{grid-template-columns:1fr;padding:12px}
+    .sidebar[style]{display:block}
+    .app{grid-template-columns:1fr;padding:18px}
+    .grid{grid-template-columns:1fr}
+    .sidebar{order:2}
+    .main{order:1}
+    .search{width:100%}
+  }
+  @media (min-width:901px){
+    #navToggleAdmin{display:none}
+    .sidebar{position:relative;transform:none;box-shadow:none}
+  }
+  @media (max-width:720px){
+    .app{grid-template-columns:1fr;padding:14px}
+    .sidebar{display:block;order:2;width:100%;margin-bottom:12px}
+    .nav{flex-direction:row;overflow:auto;gap:6px}
+    .nav button{white-space:nowrap;padding:8px}
+    .top{flex-direction:column;align-items:stretch;gap:10px}
+    .cards{flex-direction:column}
+    .grid{gap:12px}
+    .card{padding:12px}
+    table{font-size:13px}
+    th,td{padding:8px}
+    .avatar{width:30px;height:30px}
+  }
+  @media (max-width:520px){
+    .app{padding:12px}
+    /* keep sidebar visible on very small screens and make it full-width */
+    .sidebar{display:block;order:2;width:100%;margin-bottom:12px}
+    .main{padding:6px}
+    .search{width:100%}
+    .card h3{font-size:12px}
+    .card p{font-size:18px}
+    .panel{padding:10px}
+    .grid{grid-template-columns:1fr}
+    table{font-size:12px}
+    th,td{padding:6px}
+    /* make nav horizontal and scrollable for small screens */
+    .nav{flex-direction:row;overflow:auto;gap:6px;padding-bottom:6px}
+    .nav button{white-space:nowrap;padding:8px;border-radius:8px}
+  }

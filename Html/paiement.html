@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/paiement.css">
+    <title>Paiements — Association</title>
+    
+  </head>
+  <body>
+    <main class="pay-app">
+      <div class="header">
+        <div class="payment">
+          <h1>Paiements </h1>
+        </div>
+        <div style="margin-bottom:18px">
+          <a href="../index.html" class="btn btn-ghost"> Retour à l'accueil</a>
+        </div>
+      </div>
+        <p class="muted">Liste des membres éligibles (30 jours ou plus de paiements réguliers).</p>
+      
+      <div class="grid">
+        <div>
+          <div class="card">
+            <div class="flex-between-center mb-12">
+              <strong>Éligibles</strong>
+              <div class="actions">
+                <button id="refreshList" class="btn">Rafraîchir</button>
+                
+              </div>
+            </div>
+            <div id="eligibleList">
+              <!-- Rows d'eligible seront insérés ici -->
+            </div>
+          </div>
+          <div class="card mt-12">
+            <strong>En attente / Prochaine période</strong>
+            <div id="pendingList" class="mt-8">Aucun membre en attente.</div>
+            
+          </div>
+        </div>
+
+        <div>
+          <div class="card">
+            <strong>Détails du paiement</strong>
+            <div id="paymentDetail" class="mt-12">Sélectionnez un membre pour voir les détails.</div>
+            <div class="mt-12 text-right">
+              <button id="paySelected">Payer sélectionné</button>
+            </div>
+          </div>
+          <div class="card mt-12">
+            <strong>Historique des paiements</strong>
+            <p>Voir la liste des paiements</p>
+            <button id="viewPayouts" class="btn btn-primary">Voir la liste</button>
+            <p> Voir la liste des paiements en attente</p>
+            <button id="viewPending" class="btn btn-primary">Voir la liste</button>
+            <div id="payoutsList" class="hidden mt-8">Aucun paiement enregistré.</div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Modal overlay for lists -->
+    <div id="listModal" class="modal-overlay">
+      <div class="modal-inner">
+        <button id="closeListModal" class="modal-close-btn">×</button>
+        <h3 id="listModalTitle">Liste</h3>
+        <div id="listModalContent" class="mt-12"></div>
+      </div>
+    </div>
+
+    <!-- confirm dialog placeholder (ui.js will render) -->
+    <div id="confirmDialog" class="hidden"></div>
+
+    <script src="../js/ui.js"></script>
+    <script src="../js/membre.js"></script>
+    <script src="../js/paiement.js"></script>
+  </body>
+</html>
+
+
